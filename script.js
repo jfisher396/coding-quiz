@@ -1,7 +1,4 @@
-//TODO:connect answer buttons to functions that are connected to switch statements
-//TODO:state whether the the question was correctly answered 
-//TODO:reduce time on clock for incorrect answers
-//TODO:save scores to local storage
+
 
 
 let timerEl = document.getElementById("timer")
@@ -10,7 +7,7 @@ var timerInterval = setInterval;
 let intervalStop;
 var score = timerEl
 
-
+//This hides the buttons on the initial quiz start screen.
 function hideButtons() {
     
     document.getElementById("button1").style.display = "none";
@@ -29,7 +26,7 @@ function hideButtons() {
 }
 hideButtons();
 
-
+//A function to set and start the timer as well as stop it if time runs out.
 function setTimer() {
     intervalStop = setInterval(function() {
         // secondsLeft--;
@@ -48,7 +45,7 @@ function setTimer() {
 
     }, 1000);
 }
-
+//Starts the quiz
 document.getElementById("start-quiz-button").onclick = function quizStart() {
 
     setTimer();
@@ -56,15 +53,15 @@ document.getElementById("start-quiz-button").onclick = function quizStart() {
     document.getElementById("intro-header").innerHTML = "";
 
 }
-
+//Deducts 15 seconds for an incorrect answer.
 function incorrectAnswer() {
     
-    secondsLeft -=10;
+    secondsLeft -=15;
     timerEl.textContent = secondsLeft;
-    console.log("Hey", secondsLeft)
+    console.log( secondsLeft)
 }
 
-
+//Sets up the first question screen by showing previously hidden buttons.
 function question1() {
     
     document.getElementById("start-quiz-button").style.display = "none";
@@ -78,7 +75,7 @@ function question1() {
     document.getElementById("button4").style.display = "initial";
     document.getElementById("button4").innerHTML = "Hyper Text Markup Language";
     
-    
+    //Allows for selection of the answers to the question and advances user to next question.
     function answerQue1() {
 
         document.getElementById("button1").addEventListener("click", function () {
@@ -156,7 +153,7 @@ function question2() {
 
 function question3() {
     
-    document.getElementById("question-here").innerHTML = "What is the third question?";
+    document.getElementById("question-here").innerHTML = "What is the term for linking more than one string together?";
     document.getElementById("button5").style.display = "none";
     document.getElementById("button6").style.display = "none";
     document.getElementById("button7").style.display = "none";
@@ -165,10 +162,10 @@ function question3() {
     document.getElementById("button10").style.display = "initial";
     document.getElementById("button11").style.display = "initial";
     document.getElementById("button12").style.display = "initial";
-    document.getElementById("button9").innerHTML = "Answer 1";
-    document.getElementById("button10").innerHTML = "Answer 2";
-    document.getElementById("button11").innerHTML = "Answer 3";
-    document.getElementById("button12").innerHTML = "Answer 4";
+    document.getElementById("button9").innerHTML = "Stringulation";
+    document.getElementById("button10").innerHTML = "Concatenation";
+    document.getElementById("button11").innerHTML = "Connectication";
+    document.getElementById("button12").innerHTML = "String Pairing";
     
 
     function answerQue3() {
@@ -197,7 +194,7 @@ function question3() {
     answerQue3();
 
 }
-
+//Hides all buttons and calls the function to end the game.
 function gameOver() {
     
     document.getElementById("question-here").innerHTML = "Game Over!";
