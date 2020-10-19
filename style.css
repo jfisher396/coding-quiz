@@ -14,6 +14,10 @@ body {
   background-color:#ffeaa7;
 }
 
+.timer-card {
+  background-color: #b2bec3;
+}
+
 .question-card {
   height: 500px;
 }
@@ -37,8 +41,23 @@ h3 {
     margin-bottom: 20px;
 }
 
+h3 {
+  font-weight: 400;
+}
+
+form,
+li {
+  font-size: 20px;
+}
+
+
+
 #start-quiz-button {
   margin-top: 100px;
+}
+
+#timer {
+  font-size: 60px;
 }
 #scores {
   margin-top: 160px;

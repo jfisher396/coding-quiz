@@ -30,15 +30,16 @@ function setTimer() {
   timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = secondsLeft;
-
-    if (secondsLeft <= -1) {
-      gameOver();
+    if (secondsLeft === 0 || secondsLeft > 21) {
+      timerEl.style.color = "black";
     }
     if (secondsLeft > 10 && secondsLeft < 21) {
       timerEl.style.color = "yellow";
     }
-    if (secondsLeft < 1) {
+    if (secondsLeft < 6) {
       timerEl.style.color = "red";
+    }
+    if (secondsLeft < 1) {
       gameOver();
     }
   }, 1000);
@@ -114,6 +115,7 @@ const answerKey = [
   { answer: "D" },
 ];
 
+//calls the next question out of the array qAndA
 function nextQuestion() {
   if (currentIndex < qAndA.length - 1) {
     currentIndex++;
@@ -123,6 +125,7 @@ function nextQuestion() {
   }
 }
 
+//displays the current question and answer choices
 function questionDispFunc() {
   questionDisplay.textContent = qAndA[currentIndex].q;
   document.getElementById("answer1Label").innerText = qAndA[currentIndex].A;
@@ -131,6 +134,7 @@ function questionDispFunc() {
   document.getElementById("answer4Label").innerText = qAndA[currentIndex].D;
 }
 
+//compares user choice against answer key array
 function answerFunc() {
   if (response === answerKey[currentIndex].answer) {
     nextQuestion();
@@ -142,18 +146,19 @@ function answerFunc() {
   }
 }
 
+//clears interval and changes display when game is over
 function gameOver() {
   clearInterval(timerInterval);
   form.style.display = "none";
   questionDisplay.style.display = "none";
   timerCard.style.display = "none";
-
+  answerStatus.style.display = "none";
   initialsInput.style.display = "block";
   scoreDisplay.textContent = `Your score is ${timerEl.innerText}!`;
 }
-
+//array to hold high scores
 let highScores = [];
-
+//allows user to enter their initials
 function saveScore(e) {
   e.preventDefault();
   if (initials.value.length < 4) {
@@ -168,7 +173,7 @@ function saveScore(e) {
     alert("Max input is three characters");
   }
 }
-
+//displays high scores on page
 function displayHighScores() {
   initialsInput.style.display = "none";
   highScoresList.style.display = "block";
@@ -178,12 +183,12 @@ function displayHighScores() {
   highScoresList.append(li);
   restartBtn.style.display = "block";
 }
-
+//allows user to retry the quiz
 function restartQuiz(e) {
   e.preventDefault();
+  secondsLeft = 60;
   timerCard.style.display = "block";
   highScoresList.style.display = "none";
-  secondsLeft = 60;
   setTimer();
   currentIndex = 0;
   questionDisplay.style.display = "block";
@@ -192,11 +197,11 @@ function restartQuiz(e) {
   startBtn.style.display = "none";
   restartBtn.style.display = "none";
   form.style.display = "initial";
-  answerStatus.style.display = "initial";
+  
 }
 
 //event listeners
 startBtn.addEventListener("click", startQuiz);
 form.addEventListener("submit", getResponse);
 initialsInput.addEventListener("submit", saveScore);
-restartBtn.addEventListener("click", restartQuiz)
+restartBtn.addEventListener("click", restartQuiz);
