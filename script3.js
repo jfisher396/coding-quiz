@@ -12,7 +12,7 @@ const highScoresList = document.querySelector(".high-scores");
 const restartBtn = document.getElementById("restart-quiz-button");
 
 // variables
-let secondsLeft = 60;
+let secondsLeft;
 let userScore = 0;
 let response = "";
 let currentIndex = 0;
@@ -20,6 +20,7 @@ let timerInterval;
 
 //hides the question form on the page until quiz starts
 form.style.display = "none";
+timerCard.style.display = "none";
 answerStatus.style.display = "none";
 initialsInput.style.display = "none";
 highScoresList.style.display = "none";
@@ -27,6 +28,7 @@ restartBtn.style.display = "none";
 
 // A function to set and start the timer as well as stop it if time runs out.
 function setTimer() {
+  secondsLeft = 60;
   timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = secondsLeft;
@@ -47,6 +49,7 @@ function setTimer() {
 
 //Starts the quiz
 function startQuiz() {
+  timerCard.style.display = "block";
   setTimer();
   questionDispFunc();
   document.getElementById("intro-header").innerText = "";
@@ -156,21 +159,26 @@ function gameOver() {
   initialsInput.style.display = "block";
   scoreDisplay.textContent = `Your score is ${timerEl.innerText}!`;
 }
+
 //array to hold high scores
 let highScores = [];
+
 //allows user to enter their initials
 function saveScore(e) {
   e.preventDefault();
-  if (initials.value.length < 4) {
+  if (initials.value.length === 3) {
     let hsInitials = initials.value.toUpperCase();
     let hsScore = timerEl.innerText;
     highScores.initials = hsInitials;
     highScores.score = hsScore;
     highScores.push({ initials: hsInitials, score: hsScore });
-    console.log(highScores);
+
+    let stringHighScores = JSON.stringify(highScores);
+    localStorage.setItem("highScore", stringHighScores);
+
     displayHighScores();
   } else {
-    alert("Max input is three characters");
+    alert("Must input three characters");
   }
 }
 //displays high scores on page
@@ -178,26 +186,32 @@ function displayHighScores() {
   initialsInput.style.display = "none";
   highScoresList.style.display = "block";
   let li = document.createElement("li");
-  li.id = highScores.length;
-  li.innerHTML = `Initials: ${highScores.initials} Score: ${highScores.score}`;
-  highScoresList.append(li);
+
+  let highScoresStorage = localStorage.getItem("highScore");
+  highScoresStorage = JSON.parse(highScoresStorage);
+
+  for (let i = 0; i < highScoresStorage.length; i++) {
+    li.id = highScoresStorage.length;
+    li.innerHTML = `Initials: ${highScoresStorage[i].initials} Score: ${highScoresStorage[i].score}`;
+    highScoresList.append(li);
+  }
+
   restartBtn.style.display = "block";
 }
 //allows user to retry the quiz
 function restartQuiz(e) {
   e.preventDefault();
   secondsLeft = 60;
-  timerCard.style.display = "block";
-  highScoresList.style.display = "none";
   setTimer();
   currentIndex = 0;
+  timerCard.style.display = "block";
+  highScoresList.style.display = "none";
   questionDisplay.style.display = "block";
   questionDispFunc();
   document.getElementById("intro-header").innerText = "";
   startBtn.style.display = "none";
   restartBtn.style.display = "none";
   form.style.display = "initial";
-  
 }
 
 //event listeners
@@ -205,3 +219,5 @@ startBtn.addEventListener("click", startQuiz);
 form.addEventListener("submit", getResponse);
 initialsInput.addEventListener("submit", saveScore);
 restartBtn.addEventListener("click", restartQuiz);
+
+//END OF LINE

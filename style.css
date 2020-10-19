@@ -2,7 +2,6 @@ body {
   background-color: #778ca3;
   background-image: url(images/code-bg.jpg);
   background-size: cover;
-
 }
 
 .container {
@@ -11,7 +10,7 @@ body {
 }
 
 .card {
-  background-color:#ffeaa7;
+  background-color: #ffeaa7;
 }
 
 .timer-card {
@@ -25,7 +24,7 @@ body {
 .btn {
   display: block;
   text-align: center;
-  background-color:#0984e3;
+  background-color: #0984e3;
   color: white;
   width: 25%;
   margin: 20px auto;
@@ -38,7 +37,7 @@ body {
 h1,
 h2,
 h3 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -49,8 +48,6 @@ form,
 li {
   font-size: 20px;
 }
-
-
 
 #start-quiz-button {
   margin-top: 100px;
@@ -65,4 +62,15 @@ li {
 
 .highsScores {
   background-color: white;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-top: 20px;
+  }
+
+  .btn {
+  width: 50%;
+  margin: 20px auto;
+}
 }
