@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Coding Quiz</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body question-card">
+              <h1 id="intro-header" class="card-title">Welcome to the coding quiz!</h1>
+              <h3 id="question-here">
+                Please take the time to answer the following questions:
+              </h3>
 
+              <button id="start-quiz-button" type="button" class="btn">
+                Start Quiz
+              </button>
+              <form class="answer-list">
+                <input type="radio" id="answer1" name="answer" value="A" />
+                <label for="answer1" id="answer1Label"></label
+                ><br />
+                <input type="radio" id="answer2" name="answer" value="B" />
+                <label for="answer2" id="answer2Label">answer2</label
+                ><br />
+                <input type="radio" id="answer3" name="answer" value="C" />
+                <label for="answer3" id="answer3Label">answer3</label>
+                <br />
+                <input type="radio" id="answer4" name="answer" value="D" />
+                <label for="answer4" id="answer4Label">answer4</label>
+                <br />
+                <button class="btn" type="submit" value="submit">Submit</button>
+                </form>
 
+              <p id="answer-status"></p>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h2 id="intro-header" class="card-title">Welcome to the quiz!</h2>
-                        <h3 id="question-here">Please take the time to answer the following questions:</h3>
-
-                        <button id="start-quiz-button" type="button" class="btn btn-primary">Start Quiz</button>
-
-                        <button id="button1" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button2" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button3" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button4" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button5" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button6" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button7" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button8" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button9" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button10" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button11" type="button" class="btn btn-primary"></button>
-                        <br>
-                        <button id="button12" type="button" class="btn btn-primary"></button>
-                        <!-- <p id="answer-status">Answer is...</p> -->
-                    <div id="scores">
-                        <h3 id="score"></h3>
-                        <input type="text" id="initials">
-                        <button id="enterInitials" type="button" class="btn btn-primary">Enter Initials</button>
-                    </div>
-                    </div>
-
-                </div>
+              <form id="scores">
+                <h3 id="score">Your score</h3>
+                <label for="initials">Enter your initials </label>
+                <input type="text" id="initials" name="initials" />
+                <button
+                  id="enterInitials"
+                  type="submit"
+                  class="btn"
+                >
+                  Submit
+                </button>
+              </form>
+              <ol class=high-scores>
+                
+              </ol>
+              <button id="restart-quiz-button" type="button" class="btn">
+                Try again
+              </button>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title">Seconds Left:</h2>
-                        <h1 id="timer">60</h1>
-
-                    </div>
-                </div>
-
-            </div>
+          </div>
         </div>
+        <div class="col-md-3">
+          <div class="card timer-card">
+            <div class="card-body">
+              <h2 class="card-title">Seconds Left:</h2>
+              <h1 id="timer">60</h1>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <h2></h2>
-
-
-
-
-
+      <h2></h2>
     </div>
 
-
-
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script3.js"></script>
+  </body>
 </html>

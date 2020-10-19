@@ -1,17 +1,46 @@
+body {
+  background-color: #778ca3;
+}
+
 .container {
-    margin-top: 150px;
-    text-align: center;
+  margin-top: 150px;
+  text-align: center;
 }
 
 .card {
-    background-color: lightyellow;
+  background-color: #45aaf2;
+}
 
+.question-card {
+  height: 500px;
 }
 
 .btn {
-    margin: 10px;
-
+  display: block;
+  text-align: center;
+  background-color: #fed330;
+  color: black;
+  width: 25%;
+  margin: 20px auto;
 }
-.hide {
+
+/* .hide {
     display: none;
+} */
+
+h1,
+h2,
+h3 {
+    margin-bottom: 20px;
+}
+
+#start-quiz-button {
+  margin-top: 100px;
+}
+#scores {
+  margin-top: 160px;
+}
+
+.highsScores {
+  background-color: white;
 }
