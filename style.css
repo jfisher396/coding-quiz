@@ -1,5 +1,8 @@
 body {
   background-color: #778ca3;
+  background-image: url(images/code-bg.jpg);
+  background-size: cover;
+
 }
 
 .container {
@@ -8,7 +11,7 @@ body {
 }
 
 .card {
-  background-color: #45aaf2;
+  background-color: #eb4d4b;
 }
 
 .question-card {

@@ -23,6 +23,7 @@ form.style.display = "none";
 answerStatus.style.display = "none";
 initialsInput.style.display = "none";
 highScoresList.style.display = "none";
+restartBtn.style.display = "none";
 
 // A function to set and start the timer as well as stop it if time runs out.
 function setTimer() {
