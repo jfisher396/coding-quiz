@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  background-color: #eb4d4b;
+  background-color:#ffeaa7;
 }
 
 .question-card {
@@ -21,8 +21,8 @@ body {
 .btn {
   display: block;
   text-align: center;
-  background-color: #fed330;
-  color: black;
+  background-color:#0984e3;
+  color: white;
   width: 25%;
   margin: 20px auto;
 }

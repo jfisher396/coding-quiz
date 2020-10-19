@@ -182,6 +182,7 @@ function displayHighScores() {
 function restartQuiz(e) {
   e.preventDefault();
   timerCard.style.display = "block";
+  highScoresList.style.display = "none";
   secondsLeft = 60;
   setTimer();
   currentIndex = 0;
