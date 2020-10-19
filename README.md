@@ -5,8 +5,7 @@ The user selects the correct answer as quickly as possible.
 
 An incorrect answer instantly reduces the time on the clock by 15 seconds.
 
-![Start Screen](/images/Code Quiz start.png)
-Format: .png!
+/jfisher396/Code-Quiz/blob/master/images/Code%20Quiz%20start.png
 
 ![First Question](/images/Code quiz 1st question.png)
 Format: .png!
