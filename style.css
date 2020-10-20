@@ -46,6 +46,7 @@ h3 {
 
 form,
 li {
+  text-align: center;
   font-size: 20px;
 }
 
@@ -60,8 +61,10 @@ li {
   margin-top: 160px;
 }
 
-.highsScores {
-  background-color: white;
+.high-score-div {
+  max-width: 75%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 600px) {
