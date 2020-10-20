@@ -165,7 +165,8 @@ function gameOver() {
 }
 
 //array to hold high scores
-let highScores = [];
+let highScores = JSON.parse(localStorage.getItem("highScores"));
+
 
 //allows user to enter their initials
 function saveScore(e) {
@@ -176,9 +177,7 @@ function saveScore(e) {
     highScores.initials = hsInitials;
     highScores.score = hsScore;
     highScores.push({ initials: hsInitials, score: hsScore });
-    
-    let stringHighScores = JSON.stringify(highScores);
-    localStorage.setItem("highScore", stringHighScores);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 
     displayHighScores();
   } else {
@@ -193,14 +192,11 @@ function displayHighScores() {
   highScoresList.style.display = "block";
   highScoresTitle.style.display = "block";
   highScoresList.textContent = "";
-  let highScoresStorage = localStorage.getItem("highScore");
-  highScoresStorage = JSON.parse(highScoresStorage);
-  console.log(highScoresStorage);
-
-  for (let i = 0; i < highScoresStorage.length; i++) {
+  console.log(highScores)
+  for (let i = 0; i < highScores.length; i++) {
     let li = document.createElement("li");
-    li.id = highScoresStorage.length;
-    li.innerHTML = `Initials: ${highScoresStorage[i].initials} Score: ${highScoresStorage[i].score}`;
+    li.id = highScores.length;
+    li.innerHTML = `Initials: ${highScores[i].initials} Score: ${highScores[i].score}`;
     highScoresList.append(li);
   }
 
