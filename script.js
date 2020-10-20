@@ -1,5 +1,5 @@
 // element variables
-console.log('script3.js is working');
+console.log("script3.js is working");
 
 const timerEl = document.getElementById("timer");
 const timerCard = document.querySelector(".timer-card");
@@ -11,7 +11,7 @@ const scoreDisplay = document.getElementById("score");
 const initialsInput = document.getElementById("scores");
 const initials = document.getElementById("initials");
 const highScoresList = document.querySelector(".high-scores");
-const highScoresTitle = document.getElementById("high-scores-title")
+const highScoresTitle = document.getElementById("high-scores-title");
 const restartBtn = document.getElementById("restart-quiz-button");
 
 // variables
@@ -167,7 +167,6 @@ function gameOver() {
 //array to hold high scores
 let highScores = JSON.parse(localStorage.getItem("highScores"));
 
-
 //allows user to enter their initials
 function saveScore(e) {
   e.preventDefault();
@@ -187,14 +186,16 @@ function saveScore(e) {
 
 //displays high scores on page
 function displayHighScores() {
-  
   initialsInput.style.display = "none";
   highScoresList.style.display = "block";
   highScoresTitle.style.display = "block";
   highScoresList.textContent = "";
-  console.log(highScores)
+
+  highScores.sort(compare).reverse();
+  
   for (let i = 0; i < highScores.length; i++) {
     let li = document.createElement("li");
+
     li.id = highScores.length;
     li.innerHTML = `Initials: ${highScores[i].initials} Score: ${highScores[i].score}`;
     highScoresList.append(li);
@@ -202,6 +203,21 @@ function displayHighScores() {
 
   restartBtn.style.display = "block";
 }
+
+function compare(a, b) {
+  const scoreA = a.score;
+  const scoreB = b.score;
+
+  let comparison = 0;
+
+  if (scoreA > scoreB) {
+    comparison = 1;
+  } else if (scoreA < scoreB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
 //allows user to retry the quiz
 function restartQuiz(e) {
   e.preventDefault();
