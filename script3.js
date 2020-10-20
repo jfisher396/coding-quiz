@@ -174,7 +174,7 @@ function saveScore(e) {
     highScores.initials = hsInitials;
     highScores.score = hsScore;
     highScores.push({ initials: hsInitials, score: hsScore });
-
+    
     let stringHighScores = JSON.stringify(highScores);
     localStorage.setItem("highScore", stringHighScores);
 
@@ -193,10 +193,12 @@ function displayHighScores() {
 
   let highScoresStorage = localStorage.getItem("highScore");
   highScoresStorage = JSON.parse(highScoresStorage);
+  console.log(highScoresStorage);
 
   for (let i = 0; i < highScoresStorage.length; i++) {
     li.id = highScoresStorage.length;
     li.innerHTML = `Initials: ${highScoresStorage[i].initials} Score: ${highScoresStorage[i].score}`;
+    
     highScoresList.append(li);
   }
 

@@ -18,7 +18,7 @@ body {
 }
 
 .question-card {
-  height: 500px;
+  height: 400px;
 }
 
 .btn {
@@ -58,7 +58,7 @@ li {
   font-size: 60px;
 }
 #scores {
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 .high-score-div {
