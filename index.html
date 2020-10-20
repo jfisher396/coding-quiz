@@ -20,7 +20,9 @@
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body question-card">
-              <h2 id="intro-header" class="card-title">Welcome to the coding quiz!</h2>
+              <h2 id="intro-header" class="card-title">
+                Welcome to the coding quiz!
+              </h2>
               <h3 id="question-here">
                 Please take the time to answer the following questions:
               </h3>
@@ -30,11 +32,9 @@
               </button>
               <form class="answer-list">
                 <input type="radio" id="answer1" name="answer" value="A" />
-                <label for="answer1" id="answer1Label"></label
-                ><br />
+                <label for="answer1" id="answer1Label"></label><br />
                 <input type="radio" id="answer2" name="answer" value="B" />
-                <label for="answer2" id="answer2Label">answer2</label
-                ><br />
+                <label for="answer2" id="answer2Label">answer2</label><br />
                 <input type="radio" id="answer3" name="answer" value="C" />
                 <label for="answer3" id="answer3Label">answer3</label>
                 <br />
@@ -42,7 +42,7 @@
                 <label for="answer4" id="answer4Label">answer4</label>
                 <br />
                 <button class="btn" type="submit" value="submit">Submit</button>
-                </form>
+              </form>
 
               <p id="answer-status"></p>
 
@@ -50,15 +50,14 @@
                 <h3 id="score">Your score</h3>
                 <label for="initials">Enter your initials </label>
                 <input type="text" id="initials" name="initials" />
-                <button
-                  id="enterInitials"
-                  type="submit"
-                  class="btn"
-                >
+
+                <button id="enterInitials" type="submit" class="btn">
                   Submit
                 </button>
               </form>
-              
+              <ol class="high-scores">
+                <h2>High Scores:</h2>
+              </ol>
               <button id="restart-quiz-button" type="button" class="btn">
                 Try again?
               </button>
@@ -74,8 +73,6 @@
           </div>
         </div>
       </div>
-
-      
     </div>
 
     <script

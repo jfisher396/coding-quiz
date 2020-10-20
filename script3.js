@@ -1,4 +1,6 @@
 // element variables
+console.log('script3.js is working');
+
 const timerEl = document.getElementById("timer");
 const timerCard = document.querySelector(".timer-card");
 const questionDisplay = document.getElementById("question-here");
@@ -23,6 +25,7 @@ form.style.display = "none";
 timerCard.style.display = "none";
 answerStatus.style.display = "none";
 initialsInput.style.display = "none";
+highScoresList.style.display = "none";
 restartBtn.style.display = "none";
 
 // A function to set and start the timer as well as stop it if time runs out.
@@ -180,8 +183,10 @@ function saveScore(e) {
     alert("Must input three characters");
   }
 }
+
 //displays high scores on page
 function displayHighScores() {
+  
   initialsInput.style.display = "none";
   highScoresList.style.display = "block";
   let li = document.createElement("li");
@@ -203,8 +208,8 @@ function restartQuiz(e) {
   secondsLeft = 60;
   setTimer();
   currentIndex = 0;
-  timerCard.style.display = "block";
   highScoresList.style.display = "none";
+  timerCard.style.display = "block";
   questionDisplay.style.display = "block";
   questionDispFunc();
   document.getElementById("intro-header").innerText = "";
