@@ -1,17 +1,55 @@
-# Code-Quiz
-The purpose of this project was to create a short multiple choice quiz that uses a countdown timer to determine the score.  
 
-The user selects the correct answer as quickly as possible.
+  
+  # Project Title: Coding Quiz
 
-An incorrect answer instantly reduces the time on the clock by 15 seconds.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+---
 
-/jfisher396/Code-Quiz/blob/master/images/Code%20Quiz%20start.png
+  ## Description:
 
-![First Question](/images/Code quiz 1st question.png)
-Format: .png!
+  A multiple-choice quiz built using HTML, CSS and JavaScript.
 
-![Last Question](/images/Code quiz 3rd question.png)
-Format: .png!
+---
 
-![Game Over Screen](/images/Code quiz game over.png)
-Format: .png!
+  ## Table of Contents:
+  *[Visuals](#Visuals) 
+  *[License](#License)
+  *[Contributing](#Contribution)
+  *[Tests](#Tests) 
+  *[Questions](#Contact-Information)
+
+---
+
+  ## Visuals:
+
+  ![Screenshot 1](images/code-quiz-1.png)
+  ![Screenshot 2](images/code-quiz-2.png)
+  ![Screenshot 3](images/code-quiz-3.png)
+
+  
+
+---
+
+  ## License
+  License used for this project - MIT
+    * For more information on license types, please reference this website
+  for additional licensing information - [https: //choosealicense.com/](https://choosealicense.com/).
+
+---
+
+  ## Contributing:
+
+  Clone repository from https://github.com/jfisher396/coding-quiz, make changes and create a pull request.
+
+---
+
+  ## Tests:
+  None
+
+---
+
+  ## Contact Information:
+    *GitHub Username: jfisher396
+    *GitHub Email: jfisher396@hotmail.com
+  
