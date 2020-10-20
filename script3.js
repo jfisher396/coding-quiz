@@ -11,6 +11,7 @@ const scoreDisplay = document.getElementById("score");
 const initialsInput = document.getElementById("scores");
 const initials = document.getElementById("initials");
 const highScoresList = document.querySelector(".high-scores");
+const highScoresTitle = document.getElementById("high-scores-title")
 const restartBtn = document.getElementById("restart-quiz-button");
 
 // variables
@@ -26,6 +27,7 @@ timerCard.style.display = "none";
 answerStatus.style.display = "none";
 initialsInput.style.display = "none";
 highScoresList.style.display = "none";
+highScoresTitle.style.display = "none";
 restartBtn.style.display = "none";
 
 // A function to set and start the timer as well as stop it if time runs out.
@@ -189,16 +191,16 @@ function displayHighScores() {
   
   initialsInput.style.display = "none";
   highScoresList.style.display = "block";
-  let li = document.createElement("li");
-
+  highScoresTitle.style.display = "block";
+  highScoresList.textContent = "";
   let highScoresStorage = localStorage.getItem("highScore");
   highScoresStorage = JSON.parse(highScoresStorage);
   console.log(highScoresStorage);
 
   for (let i = 0; i < highScoresStorage.length; i++) {
+    let li = document.createElement("li");
     li.id = highScoresStorage.length;
     li.innerHTML = `Initials: ${highScoresStorage[i].initials} Score: ${highScoresStorage[i].score}`;
-    
     highScoresList.append(li);
   }
 
@@ -211,6 +213,7 @@ function restartQuiz(e) {
   setTimer();
   currentIndex = 0;
   highScoresList.style.display = "none";
+  highScoresTitle.style.display = "none";
   timerCard.style.display = "block";
   questionDisplay.style.display = "block";
   questionDispFunc();
