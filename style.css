@@ -15,10 +15,13 @@ body {
 
 .timer-card {
   background-color: #b2bec3;
+  min-width: 253px;
+  max-width: 500px;
 }
 
 .question-card {
   min-height: 400px;
+  max-width: 500px;
 }
 
 .btn {
@@ -29,10 +32,6 @@ body {
   width: 25%;
   margin: 20px auto;
 }
-
-/* .hide {
-    display: none;
-} */
 
 h1,
 h2,
@@ -68,12 +67,30 @@ li {
 }
 
 @media (max-width: 600px) {
+  label,
+  li {
+    font-size: 14px;
+  }
+
+  h3 {
+  }
   .container {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .btn {
-  width: 50%;
-  margin: 20px auto;
-}
+    width: 50%;
+    margin: 20px auto;
+  }
+  .high-score-div {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .timer-title {
+    margin-bottom: 0;
+  }
+  #timer {
+    margin-bottom: 0;
+  }
 }

@@ -16,16 +16,20 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body question-card">
+        <div class="col"></div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="card question-card">
+            <div class="card-body">
               <h2 id="intro-header" class="card-title">
                 Welcome to the coding quiz!
               </h2>
-              <h3 id="question-here">
-                Please take the time to answer the following questions:
-              </h3>
+              <h3 id="question-here"></h3>
+              <p id="instructions">
+                You have 60 seconds to answer 5 questions. Your score will be
+                however many seconds are left on the clock once all questions
+                are answered. For an incorrect answer, 15 seconds will be
+                deducted. Once the time runs down to 0 the game will be over.
+              </p>
 
               <button id="start-quiz-button" type="button" class="btn">
                 Start Quiz
@@ -57,9 +61,7 @@
               </form>
               <div class="high-score-div">
                 <h2 id="high-scores-title">High Scores:</h2>
-                <ol class="high-scores">
-                  
-                </ol>
+                <ol class="high-scores"></ol>
               </div>
               <button id="restart-quiz-button" type="button" class="btn">
                 Try again?
@@ -67,10 +69,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12">
           <div class="card timer-card">
             <div class="card-body">
-              <h2 class="card-title">Seconds Left:</h2>
+              <h2 class="card-title timer-title">Seconds Left:</h2>
               <h1 id="timer">60</h1>
             </div>
           </div>

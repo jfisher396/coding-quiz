@@ -1,6 +1,4 @@
 // element variables
-console.log("script3.js is working");
-
 const timerEl = document.getElementById("timer");
 const timerCard = document.querySelector(".timer-card");
 const questionDisplay = document.getElementById("question-here");
@@ -13,6 +11,7 @@ const initials = document.getElementById("initials");
 const highScoresList = document.querySelector(".high-scores");
 const highScoresTitle = document.getElementById("high-scores-title");
 const restartBtn = document.getElementById("restart-quiz-button");
+const instructions = document.getElementById("instructions");
 
 // variables
 let secondsLeft;
@@ -45,7 +44,7 @@ function setTimer() {
     if (secondsLeft < 6) {
       timerEl.style.color = "red";
     }
-    if (secondsLeft < 1) {
+    if (secondsLeft <= 0) {
       gameOver();
     }
   }, 1000);
@@ -57,6 +56,7 @@ function startQuiz() {
   setTimer();
   questionDispFunc();
   document.getElementById("intro-header").innerText = "";
+  instructions.style.display = "none";
   startBtn.style.display = "none";
   form.style.display = "initial";
   answerStatus.style.display = "initial";
@@ -75,7 +75,7 @@ function incorrectAnswer() {
   timerEl.textContent = secondsLeft;
 }
 
-//question and answer choices for question 1
+//question and answer choices for questions
 const qAndA = [
   {
     q: "What does HTML stand for?",
@@ -114,6 +114,7 @@ const qAndA = [
   },
 ];
 
+//answers to questions
 const answerKey = [
   { answer: "D" },
   { answer: "A" },
@@ -204,6 +205,7 @@ function displayHighScores() {
   restartBtn.style.display = "block";
 }
 
+//compare function to sort high-scores
 function compare(a, b) {
   const scoreA = a.score;
   const scoreB = b.score;
