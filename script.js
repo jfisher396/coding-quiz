@@ -168,7 +168,7 @@ function gameOver() {
 //function to check local storage for high scores and respond accordingly
 let highScores;
 function getHighScores() {
-  let savedHighScores = JSON.parse(localStorage.getItem("highScores"));
+  const savedHighScores = JSON.parse(localStorage.getItem("highScores"));
 
   if (savedHighScores) {
     highScores = savedHighScores;
