@@ -8,7 +8,7 @@
 
   ## Description:
 
-  A multiple-choice quiz built using HTML, CSS and JavaScript.
+  A multiple-choice quiz built using HTML, CSS and JavaScript utilizing local storage.
 
 ---
 
