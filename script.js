@@ -165,22 +165,29 @@ function gameOver() {
   scoreDisplay.textContent = `Your score is ${timerEl.innerText}!`;
 }
 
-//array to hold high scores
-let highScores = JSON.parse(localStorage.getItem("highScores"));
+//function to check local storage for high scores and respond accordingly
+let highScores;
+function getHighScores() {
+  let savedHighScores = JSON.parse(localStorage.getItem("highScores"));
+
+  if (savedHighScores) {
+    highScores = savedHighScores;
+  } else {
+    highScores = [];
+  }
+}
 
 //allows user to enter their initials
 function saveScore(e) {
   e.preventDefault();
   if (initials.value.length === 3) {
-    
     let hsInitials = initials.value.toUpperCase();
     let hsScore = timerEl.innerText;
-    
+
     highScores.push({ Initials: hsInitials, Score: hsScore });
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
     displayHighScores();
-
   } else {
     alert("Must input three characters");
   }
@@ -194,7 +201,7 @@ function displayHighScores() {
   highScoresList.textContent = "";
 
   highScores.sort(compare).reverse();
-  console.log(highScores)
+  console.log(highScores);
   for (let i = 0; i < highScores.length; i++) {
     let li = document.createElement("li");
 
@@ -244,5 +251,7 @@ startBtn.addEventListener("click", startQuiz);
 form.addEventListener("submit", getResponse);
 initialsInput.addEventListener("submit", saveScore);
 restartBtn.addEventListener("click", restartQuiz);
+
+getHighScores();
 
 //END OF LINE
