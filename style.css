@@ -2,6 +2,8 @@ body {
   background-color: #778ca3;
   background-image: url(images/code-bg.jpg);
   background-size: cover;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 .container {
@@ -42,7 +44,9 @@ h3 {
 h3 {
   font-weight: 400;
 }
-
+p {
+  font-size: 18px;
+}
 form,
 li {
   text-align: center;

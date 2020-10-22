@@ -172,14 +172,15 @@ let highScores = JSON.parse(localStorage.getItem("highScores"));
 function saveScore(e) {
   e.preventDefault();
   if (initials.value.length === 3) {
+    
     let hsInitials = initials.value.toUpperCase();
     let hsScore = timerEl.innerText;
-    highScores.initials = hsInitials;
-    highScores.score = hsScore;
-    highScores.push({ initials: hsInitials, score: hsScore });
+    
+    highScores.push({ Initials: hsInitials, Score: hsScore });
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
     displayHighScores();
+
   } else {
     alert("Must input three characters");
   }
@@ -193,12 +194,13 @@ function displayHighScores() {
   highScoresList.textContent = "";
 
   highScores.sort(compare).reverse();
-  
+  console.log(highScores)
   for (let i = 0; i < highScores.length; i++) {
     let li = document.createElement("li");
 
-    li.id = highScores.length;
-    li.innerHTML = `Initials: ${highScores[i].initials} Score: ${highScores[i].score}`;
+    li.id = i;
+
+    li.innerHTML = `Initials: ${highScores[i].Initials} Score: ${highScores[i].Score}`;
     highScoresList.append(li);
   }
 
@@ -207,8 +209,8 @@ function displayHighScores() {
 
 //compare function to sort high-scores
 function compare(a, b) {
-  const scoreA = a.score;
-  const scoreB = b.score;
+  const scoreA = a.Score;
+  const scoreB = b.Score;
 
   let comparison = 0;
 
