@@ -201,7 +201,7 @@ function displayHighScores() {
   highScoresList.textContent = "";
 
   highScores.sort(compare).reverse();
-  console.log(highScores);
+  
   for (let i = 0; i < highScores.length; i++) {
     let li = document.createElement("li");
 
