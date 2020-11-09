@@ -54,10 +54,7 @@ This app will run in the browser and feature dynamically updated HTML and CSS po
 * In HTML semantic tags have been used to aid with accessibility.
 * The site is built using a Bootstrap CSS framework.
    * The use of Bootstrap minimises the need for media queries. 
-   * See [Bulma documentation](https://bulma.io/documentation/) for customizing the site with their provided options
-* [jQuery](https://api.jquery.com/) powers the dynamic rendering of the html content based on user input
-* [moment.js](https://momentjs.com/) is used to manipulate date values for historic data extraction from APIs
-
+   * See [Bootstrap documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/) for customizing the site with their provided options.
 
 ## Setup
 
