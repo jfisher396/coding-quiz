@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <main class="container">
       <div class="row">
         <div class="col"></div>
         <div class="col-lg-6 col-sm-12">
@@ -36,16 +36,17 @@
                 Start Quiz
               </button>
               <form class="answer-list">
-                <input type="radio" id="answer1" name="answer" value="A" />
-                <label for="answer1" id="answer1Label"></label><br />
-                <input type="radio" id="answer2" name="answer" value="B" />
-                <label for="answer2" id="answer2Label">answer2</label><br />
-                <input type="radio" id="answer3" name="answer" value="C" />
-                <label for="answer3" id="answer3Label">answer3</label>
-                <br />
-                <input type="radio" id="answer4" name="answer" value="D" />
-                <label for="answer4" id="answer4Label">answer4</label>
-                <br />
+                <fieldset>
+                  <legend>Select One Answer:</legend>
+                  <input type="radio" id="answer1" name="answer" value="A" />
+                  <label for="answer1" id="answer1Label"></label><br />
+                  <input type="radio" id="answer2" name="answer" value="B" />
+                  <label for="answer2" id="answer2Label">answer2</label><br />
+                  <input type="radio" id="answer3" name="answer" value="C" />
+                  <label for="answer3" id="answer3Label">answer3</label><br />
+                  <input type="radio" id="answer4" name="answer" value="D" />
+                  <label for="answer4" id="answer4Label">answer4</label><br />
+                </fieldset>
                 <button class="btn" type="submit" value="submit">Submit</button>
               </form>
 
@@ -79,7 +80,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
