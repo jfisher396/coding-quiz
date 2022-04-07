@@ -20,6 +20,10 @@ let response = "";
 let currentIndex = 0;
 let timerInterval;
 
+// sound effects
+const correctSound = new Audio("sounds/correct.wav");
+const incorrectSound = new Audio("sounds/incorrect.wav");
+
 //hides the question form on the page until quiz starts
 form.style.display = "none";
 timerCard.style.display = "none";
@@ -145,9 +149,11 @@ function questionDispFunc() {
 //compares user choice against answer key array
 function answerFunc() {
   if (response === answerKey[currentIndex].answer) {
+    correctSound.play();
     nextQuestion();
     answerStatus.style.display = "none";
   } else {
+    incorrectSound.play();
     answerStatus.style.display = "block";
     answerStatus.textContent = "Incorrect. Try again.";
     incorrectAnswer();
