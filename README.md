@@ -2,6 +2,12 @@
 
 A timed code quiz with multiple-choice questions.
 
+<p>
+    <img src="https://img.shields.io/badge/-HTML-red" />
+    <img src="https://img.shields.io/badge/-CSS-lightgrey" />
+    <img src="https://img.shields.io/badge/-JavaScript-blue" />
+</p>
+
 [A deployed version can be viewed here.](https://jfisher396.github.io/coding-quiz/)
 
 ## Contents
@@ -20,13 +26,13 @@ A timed code quiz with multiple-choice questions.
 
 This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
-### User Story
+## User Story
 
     AS A coding bootcamp student
     I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
     SO THAT I can gauge my progress compared to my peers
 
-### Acceptance Criteria
+## Acceptance Criteria
 
     GIVEN I am taking a code quiz
     WHEN I click the start button
@@ -41,12 +47,15 @@ This app will run in the browser and feature dynamically updated HTML and CSS po
     THEN I can save my initials and score 
 
 
-### Visuals:
+## Visuals:
 
 
 ![Screenshot 1](images/code-quiz-1.png)
+---
 ![Screenshot 2](images/code-quiz-2.png)
+---
 ![Screenshot 3](images/code-quiz-3.png)
+---
 
 
 ### Build
@@ -67,15 +76,18 @@ git clone git@github.com:jfisher396/coding-quiz.git
 
 Built by [James Fisher](https://jfisher396.github.io/james-fisher-web-developer/).
 
-### Contact Information
-    *GitHub Username: jfisher396
-    *GitHub Email: jfisher396@hotmail.com
+## Contact Information
+* GitHub Username: jfisher396
+* Email: james@james-fisher-web-developer.com
+* <p>
+    <a href="https://www.linkedin.com/in/jamesfisher-webdev/"><img alt="Linkedin: James Fisher" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" /></a>
+    </p>
 
 ## License
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-This application is released under [MIT](assets/LICENSE.txt) license.
+
 
 ## Contributing
 
